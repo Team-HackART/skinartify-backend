@@ -4,6 +4,9 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import io
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Disable GPU usage for compatibility
 
 # Load model once at startup
 model = tf.keras.models.load_model("skinartify_densenet_model.keras")
@@ -21,6 +24,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def root():
+    return {"status": "Backend running", "message": "Skinartify API is live!"}
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
