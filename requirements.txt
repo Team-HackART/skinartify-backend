@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-tensorflow-cpu==2.16.1  # or match your current TF version
+tensorflow-cpu==2.15.0  # or match your current TF version
 pillow
 numpy
 requests
