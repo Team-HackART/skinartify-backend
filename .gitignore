@@ -32,6 +32,4 @@ env/
 # Local config files
 *.local
 
-# Compiled model files (optional - remove if you want to keep them in Git)
-*.h5
-*.keras
+
